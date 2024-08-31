@@ -5,89 +5,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Dana Kaget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
+            background: #2c3e50;
+            background: -webkit-linear-gradient(to left, #4ca1af, #2c3e50);
+            background: linear-gradient(to left, #4ca1af, #2c3e50);
+            overflow: hidden;
+            flex-direction: column;
         }
 
         .container {
             text-align: center;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px 50px;
-            border-radius: 20px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
+            transform: translateY(-50px);
+            animation: slideDown 0.5s ease-out forwards;
+            max-width: 90%;
+            overflow: auto;
+        }
+
+        @keyframes slideDown {
+            to {
+                transform: translateY(0);
+            }
         }
 
         .container h1 {
-            color: #ffbc00;
+            color: #4ca1af;
             margin-bottom: 30px;
             font-size: 2.5em;
             font-weight: 700;
         }
 
+        .progress-bar {
+            width: 0;
+            height: 10px;
+            background: #4ca1af;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            transition: width 1s;
+            animation: loadProgressBar 1s forwards;
+        }
+
+        @keyframes loadProgressBar {
+            to {
+                width: 100%;
+            }
+        }
+
         .link-btn {
             display: inline-block;
             text-decoration: none;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: #4ca1af;
+            background: -webkit-linear-gradient(to right, #2c3e50, #4ca1af);
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
             color: #fff;
-            padding: 15px 30px;
+            padding: 15px 40px;
             border-radius: 50px;
             font-size: 1.2em;
             font-weight: 600;
             transition: all 0.4s;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
         }
 
         .link-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
         }
 
         .link-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
         .footer {
             margin-top: 30px;
             font-size: 0.9em;
-            color: #aaa;
+            color: #777;
         }
 
         .footer span {
             font-weight: 600;
-            color: #ffbc00;
+            color: #4ca1af;
         }
 
-        .ad-banner {
+        .social-media {
             display: flex;
             justify-content: center;
-            align-items: center;
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            color: #000;
-            width: 80%;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .ad-banner img {
-            height: 40px;
-            margin-right: 10px;
+        .social-media a {
+            color: #4ca1af;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #2c3e50;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            color: #4ca1af;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            color: #333;
+        }
+
+        .popup-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4ca1af;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .popup-btn:hover {
+            background: #2c3e50;
+        }
+
+        .dynamic-content {
+            margin-top: 30px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .testimonials {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 90%;
+        }
+
+        .testimonials h3 {
+            color: #4ca1af;
+            margin-bottom: 15px;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #333;
+        }
+
+        .testimonial span {
+            color: #4ca1af;
+            font-weight: 600;
+        }
+
+        .testimonial-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-form input[type="text"],
+        .testimonial-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: 300px;
+            max-width: 90%;
+        }
+
+        .testimonial-form button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background: #4ca1af;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .testimonial-form button:hover {
+            background: #2c3e50;
         }
     </style>
 </head>
@@ -95,15 +233,91 @@
 <body>
     <div class="container">
         <h1>Klik untuk Dana Kaget!</h1>
-        <a href="https://link.dana.id/kaget?c=s2ssmpbkl&r=c9tyjH" target="_blank" class="link-btn">Dapatkan Dana Kaget</a>
+        <div class="progress-bar"></div>
+        
+        <a href="https://danakaget.link" target="_blank" class="link-btn">Dapatkan Dana Kaget</a>
+
+        <div class="dynamic-content" id="dynamic-content"></div>
+
+        <div class="testimonials">
+            <h3>Apa kata mereka:</h3>
+            <div id="testimonials-container"></div>
+        </div>
+
+        <div class="testimonial-form">
+            <input type="text" id="name" placeholder="Nama kamu">
+            <textarea id="testimonial" rows="4" placeholder="Tuliskan pesan"></textarea>
+            <button onclick="addTestimonial()">kirim</button>
+        </div>
+        
+        <div class="social-media">
+            <a href="https://www.facebook.com/Pro.codor" target="_blank">Facebook</a>
+            <a href="https://wa.me/6283878294861" target="_blank">whatsapp</a>
+        </div>
+
         <div class="footer">
             © 2024 by <span>Luxxzy</span>
         </div>
     </div>
-    <div class="ad-banner">
-        <img src="https://via.placeholder.com/40" alt="Iklan">
-        <span>NOTE : INI BUKAN LINK PHISING ATAU JUDOL</span>
+
+    <div class="popup" id="popup">
+        <h2>NOTIFIKASI DARI ADMIN</h2>
+        <p>selamat datang masbro😁, info game cuan Kunjungi👉 <a href="https://www.camile.fun/?ref=nowy1dn" target="_blank">game.cuan</a></p>
+        <button class="popup-btn" onclick="closePopup()">Tutup</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(() => {
+                document.getElementById('popup').style.display = 'block';
+                document.querySelector('.progress-bar').style.width = '100%';
+            }, 3000);
+
+            const dynamicContent = document.getElementById('dynamic-content');
+            const hours = new Date().getHours();
+            if (hours < 12) {
+                dynamicContent.innerText = "Selamat Pagi! Waktunya dana kaget!";
+            } else if (hours < 18) {
+                dynamicContent.innerText = "Selamat Siang! Yuk dapatkan dana kaget!";
+            } else {
+                dynamicContent.innerText = "Selamat Malam! Jangan lewatkan dana kaget!";
+            }
+
+            loadTestimonials();
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function addTestimonial() {
+            const name = document.getElementById('name').value;
+            const testimonial = document.getElementById('testimonial').value;
+            if (name && testimonial) {
+                const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+                testimonials.push({ name, testimonial });
+                localStorage.setItem('testimonials', JSON.stringify(testimonials));
+                loadTestimonials();
+                document.getElementById('name').value = '';
+                document.getElementById('testimonial').value = '';
+                alert('Testimoni berhasil ditambahkan!');
+            } else {
+                alert('Mohon isi nama dan pesan');
+            }
+        }
+
+        function loadTestimonials() {
+            const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+            const container = document.getElementById('testimonials-container');
+            container.innerHTML = '';
+            testimonials.forEach(testimonial => {
+                const div = document.createElement('div');
+                div.classList.add('testimonial');
+                div.innerHTML = `<p>"${testimonial.testimonial}" <br><span>- ${testimonial.name}</span></p>`;
+                container.appendChild(div);
+            });
+        }
+    </script>
 </body>
 
-</html
+        </html>
